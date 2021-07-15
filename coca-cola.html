@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coca-Cola Landing Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="cola.css" class="rel">
+</head>
+
+<body>
+    <section class="sec">
+        <header>
+            <a href="#"><img src="image/logo1.svg" class="logo"></a>
+            <div class="toggle" onclick="togglemenu()"></div>
+            <ul class="nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Newsletter</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textbox">
+                <h2 id="txTitle">Life Tastes Good</h2>
+                <h3 id="txSub">Always Coca-Cola</h3>
+                <p>The Coca-Cola Company is the world’s largest beverage company in the world and is the leading
+                    producer and marketer of soft drinks. The company markets four of the world’s five drinks brands:
+                    Coca-Cola, Diet Coke, Fanta and Sprite.</p>
+                <a href="#" class="btn">View All Products</a>
+            </div>
+            <div class="imagebox">
+                <img src="image/cola.png" class="cola">
+            </div>
+        </div>
+        <ul class="thumbs">
+            <li>
+                <img src="image/cola.png" onclick="imgSlider('image/cola.png'); changeBgColor('linear-gradient(to right,#a40015,#fe202e, #f92f39)'); changeText1()">
+            </li>
+            <li>
+                <img src="image/fanta (1).png" onclick="imgSlider('image/fanta (1).png'); changeBgColor('linear-gradient(to right, #fe4600, #ff7d00,#ff923f)'); changeText3()" >
+            </li>
+            <li>
+                <img  src="image/zero.png" onclick="imgSlider('image/zero.png'); changeBgColor('linear-gradient(to right, #000000, #303939)'); changeText2()" >
+            </li>
+            <li>
+                <img src="image/sprite.png" onclick="imgSlider('image/sprite.png'); changeBgColor('linear-gradient(to right, #016d34,#3ba676, #15609c)'); changeText4()" >
+            </li>
+        </ul>
+        <ul class="social">
+            <li><a href="#">
+                    <img src="image/facebook.svg" class="sci">
+                </a></li>
+            <li><a href="#">
+                    <img src="image/instagram.svg" class="sci">
+                </a></li>
+            <li><a href="#">
+                    <img src="image/twitter.svg" class="sci">
+                </a></li>
+        </ul>
+
+    </section>
+    <script type="text/javascript">
+   function imgSlider(anything){
+    document.querySelector('.cola').src = anything;
+}
+
+function changeBgColor(color){
+    const sec = document.querySelector('.sec');
+    sec.style.background = color;
+}
+
+function changeText1(){
+    document.getElementById("txTitle").innerHTML = "Coca Cola Classic";
+    document.getElementById("txSub").innerHTML = "Taste The Feeling";
+}
+
+function changeText2(){
+    document.getElementById("txTitle").innerHTML = "Coca Cola Zero";
+    document.getElementById("txSub").innerHTML = "Great Taste, Zero Sugar";
+}
+
+function changeText3(){
+    document.getElementById("txTitle").innerHTML = "Fanta";
+    document.getElementById("txSub").innerHTML = "Let Your Fantasie Run Wild!";
+}
+
+function changeText4(){
+    document.getElementById("txTitle").innerHTML = "Sprite";
+    document.getElementById("txSub").innerHTML = "Get the Right Sprite.";
+}
+function togglemenu(){
+    const menu = document.querySelector('.toggle');
+    const nav =document.querySelector('.nav');
+    menu.classList.toggle('active')
+    nav.classList.toggle('active')
+}
+
+    </script>
+</body>
+
+</html>
